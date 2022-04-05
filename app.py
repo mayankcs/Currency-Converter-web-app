@@ -8,11 +8,13 @@ def home():
     result=''
     before=''
     if request.method == "POST":
+        #Accept data from html form
         Source=request.form.get('Source').upper()
         Target=request.form.get('Target').upper()
         Amount=float(request.form.get('Amount'))
-        #rate,date=exchange_rate.get_exchange_rate(Source,Target)
-        rate,date=75.398089 ,'2022-04-05'
+        
+        #fetching current exchange rate
+        rate,date=exchange_rate.get_exchange_rate(Source,Target)
         result=rate*Amount
         
         before="%s %s =%s "%(Source,str(Amount),Target)
