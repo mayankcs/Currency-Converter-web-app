@@ -20,7 +20,7 @@ def home():
             result=rate*Amount
 
             before="%s %s =%s "%(Source,str(Amount),Target)
-       except:
+        except:
             msg="Please check the inpute data again"
         
     return render_template("index.html",msg=msg,before=before,result=result)
