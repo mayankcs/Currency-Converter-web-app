@@ -14,7 +14,10 @@ def home():
             Source=request.form.get('Source').upper().rstrip()
             Target=request.form.get('Target').upper().rstrip()
             Amount=float(request.form.get('Amount'))
-
+            if len(source)!=3 or len(target)!=3:
+                msg="Please provide correct currency code "
+                print(msg)
+                return render_template("index.html",msg=msg)
             #fetching current exchange rate
             rate,date=exchange_rate.get_exchange_rate(Source,Target)
             result=rate*Amount
