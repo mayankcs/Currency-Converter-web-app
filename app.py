@@ -24,7 +24,7 @@ def home():
 
             before="%s %s =%s "%(Source,str(Amount),Target)
         except:
-            msg="Please check the inpute data again"
+            msg="Please check the input data again"
         
     return render_template("index.html",msg=msg,before=before,result=result)
 
