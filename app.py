@@ -14,7 +14,7 @@ def home():
             Source=request.form.get('Source').upper().rstrip()
             Target=request.form.get('Target').upper().rstrip()
             Amount=float(request.form.get('Amount'))
-            if len(source)!=3 or len(target)!=3:
+            if len(Source)!=3 or len(Target)!=3:
                 msg="Please provide correct currency code "
                 print(msg)
                 return render_template("index.html",msg=msg)
@@ -29,6 +29,6 @@ def home():
     return render_template("index.html",msg=msg,before=before,result=result)
 
 if __name__=='__main__':
-    app.run(debug=True)
+    app.run(debug=False)
 
 
